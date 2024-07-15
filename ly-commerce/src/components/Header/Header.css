@@ -1,0 +1,50 @@
+.headerOne {
+    display: flex; 
+    flex-direction: row; 
+    width: 100%; 
+    justify-content: right;
+  }
+  
+  #header {
+    background-color: white;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .headlink {
+    list-style: none;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  
+  ul a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  ul li:hover {
+    color: rgb(68, 129, 228);
+  }
+
+  .cart-container {
+    padding-right: 30px;
+  }
+
+  h3 {
+    font-weight: bold;
+    color: black;
+    font-family: sans-serif;
+    padding-left: 30px;
+    font-size: 25px;
+    gap: 10px;
+  }
