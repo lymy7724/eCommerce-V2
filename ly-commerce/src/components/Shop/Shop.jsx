@@ -1,27 +1,21 @@
 import React from 'react'
-import mysql from 'mysql2'
+import { useState, useEffect } from 'react'
 
 export default function Shop() {
+    const [product, setProduct ] = useState([]);
 
-  const connection = mysql.createConnection({
-    host: "sql5.freesqldatabase.com",
-    user: "sql5719789",
-    password: "pGFUCcYpSy",
-    database: "sql5719789",
-  });
-  
-  connection.connect(function (err) {
-    if (err) throw err;
-    console.log("Database is connected!!");
-  });
+    useEffect(()=> {
+      products()
+    }, [])
 
-  connection.query(
-    "SELECT * FROM products",
-    function (err, result, fields) {
-      if (err) throw err;
-      console.log(result);
+    const products = async () =>{
+      const response = await fetch('http://localhost:9000/API/getall');
+
+      console.log(response.body)
+      setProduct(await response)
     }
-  );
+
+    
 
   return (
     <div>
