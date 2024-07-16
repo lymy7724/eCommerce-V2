@@ -6,6 +6,7 @@ import "./index.css";
 import Contact from "./components/Contact/Contact";
 import Home from "./components/Home/Home";
 import Shop from "./components/Shop/Shop";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

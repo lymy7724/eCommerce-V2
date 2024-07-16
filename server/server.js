@@ -13,17 +13,15 @@ const connection = mysql.createConnection({
   database: "sql5719789",
 });
 
-connection.connect(function (err) {
-  if (err) throw err;
-  console.log("Database is connected!!");
-});
-
 app.all("/API/getall", (req, res) => {
-  connection.query("SELECT * FROM products", function (err, result, fields) {
-    if (err) throw err;
-    console.log(result);
-    res.json(result);
-  });
+  connection.query(
+    "SELECT * FROM products_table",
+    function (err, result, fields) {
+      if (err) throw err;
+      console.log(result);
+      res.json(result);
+    }
+  );
 });
 
 app.listen(port, () => {
