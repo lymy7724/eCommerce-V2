@@ -42,6 +42,21 @@ app.post("/newsletter", (req, res) => {
   res.redirect(x);
 });
 
+app.post("/form", (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const message = req.body.message;
+
+  const sql = `INSERT INTO form_info(name, email, message) VALUES(?, ?, ?)`;
+  connection.query(sql, [name, email, message], function (err, data) {
+    if (err) {
+      console.log("error");
+    } else {
+      console.log("success");
+    }
+  });
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

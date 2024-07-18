@@ -46,6 +46,11 @@ export default function Home() {
 
   return (
     <div>
+        <div className='heroImage'>
+            <h1 id='main-message'>CRAFTED WITH CARE</h1>
+            <div style={{paddingTop: "30px"}}><Link to="/shop"><button className="main-button">SHOP
+                            NOW</button></Link></div>
+        </div>
       <div className="greetings">
           <h3>Welcome to Crochetopia</h3>
           <p>Step into a world of handmade charm and crochet wonders. Each stitch is
