@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Contact.css'
 import frida from '../../images/frida.avif'
-import Accordian from './Accordian.jsx'
+import Accordion from '../Accordion/Accordian.jsx'
+import { accordionData } from '../Accordion/utils.jsx'
+import '../Accordion/Accordian.css'
+
+
 
 export default function Contact() {
+  
   return (
-    <div id="form-container">
+    <>
+    <div id="form-cont">
       <img src={frida} class="frida" alt="crochet frida khalo"/>
       <div className="small-form-cont">
           <h5>Leave us a question or comment!</h5>
@@ -22,13 +28,22 @@ export default function Contact() {
               </div>
               <p>MESSAGE *</p>
               <input id="message" name="message"/>
-              <button type="submit" id="submit">SEND MESSAGE</button>
+              <button type="submit" id="submit-form">SEND MESSAGE</button>
           </form>
       </div>
-      <div>
-        <h6>FREQUENTLY ASKED</h6>
-        <Accordian/>
+      
+    </div>
+
+    <div>
+      <h1>FREQUENTLY ASKED</h1>
+      <div className="accordion">
+        {accordionData.map(({ title, content }) => (
+          <Accordion title={title} content={content} />
+        ))}
       </div>
     </div>
+    
+  </>
   )
 }
+

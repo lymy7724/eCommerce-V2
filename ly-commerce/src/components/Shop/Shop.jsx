@@ -5,17 +5,40 @@ import './Shop.css'
 
 export default function Shop() {
     const [product, setProduct ] = useState([]);
+    const [category, setCategory] = useState(product);
+
+
+    const handleBtns = (e) => {
+    let word=e.target.value;
+     
+    if(word === "All"){
+      setCategory(product)
+    }
+    else if(word === "Animals") {
+      const filtered = product.filter(item=>item.category === "Animals");
+      setCategory(filtered)
+    }
+    else if(word === "Disney") {
+      const filtered = product.filter(item=>item.category === "Disney");
+      setCategory(filtered)
+    }
+  }
 
     useEffect(()=> {
-      products()
+      products();
     }, [])
+
+    // const test = () => {
+    //   setCategory(product)
+    // }
 
     const products = () => {
       axios
         .get('http://localhost:9000/API/getall')
         .then((res) => {
           console.log(res);
-          setProduct(res.data)
+          setProduct(res.data);
+          setCategory(res.data)
         })
         .catch((err) => {
           console.log(err);
@@ -23,24 +46,37 @@ export default function Shop() {
       }
 
   return (
-    <div>
-      {product.map((item) => (
-        <>
-        <div style={{display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center", backgroundColor: "rgba(107, 173, 230, 0.28)"}}>
-        <h2>Shop our products</h2>
-        <div id="product-container">
-        <div className='card'>
+    <>
+    
+    <div style={{display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center", backgroundColor: "rgba(107, 173, 230, 0.28)"}}>
+      
+      <h2>Shop our products</h2>
+
+      <div class="dropdown">
+        <button class="dropbtn">Filter by:</button>
+        <div class="dropdown-content">
+        <button value="All" onClick={handleBtns}>All</button>
+                  <button value="Animals" onClick={handleBtns}>Animals</button>
+                  <button value="Disney" onClick={handleBtns}>Disney</button>
+        </div>
+      </div>
+
+
+      <div id="product-cont">
+      
+      {category.map((item) => (
+         
+        <div id='cardImg'>
         <div className='img-hover'><img src={item.image} alt="" className='images'/></div>
           <p className='name'>{item.product_name}</p>
           <p>{item.description}</p>
           <p className='price'>${item.price}</p>
-          <div className="cart2"><button className="cart">ADD TO CART</button></div>
+          <div className="cart2"><button className="cartButton">ADD TO CART</button></div>
           </div>
-        </div>
-        
-          </div>
-          </>
-      ))}
+          
+        ))}
+      </div>
     </div>
+    </>
   )
 }

@@ -7,11 +7,11 @@ import tiktok from '../../images/tiktok.svg'
 export default function Footer() {
   return (
     <footer>
-        <div className="footerContainer">
+        <div className="footContainer">
             <div>
-                <a href="https://www.instagram.com/"><img src={instagram} alt='instagram logo' className='icons'/></a>
-                <a href="https://www.facebook.com/"><img src={facebook} alt='facebook logo' className='icons'/></a>
-                <a href="https://www.tiktok.com/en/"><img src={tiktok} alt='tiktok logo' className='icons'/></a>
+                <a href="https://www.instagram.com/"><img src={instagram} alt='instagram logo' className='iconsLog'/></a>
+                <a href="https://www.facebook.com/"><img src={facebook} alt='facebook logo' className='iconsLog'/></a>
+                <a href="https://www.tiktok.com/en/"><img src={tiktok} alt='tiktok logo' className='iconsLog'/></a>
             </div>
             <div>
                 <ul className="ftlink">

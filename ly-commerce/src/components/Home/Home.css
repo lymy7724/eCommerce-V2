@@ -150,12 +150,20 @@ h3 {
     justify-content: center;
 }
 
+#newsletter-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
 #submit {
     height: 50px;
     background-color: rgba(117, 142, 223, 0.819);
     border: 0;
     color: white;
     font-size: 15px;
+    width: 10%;
 }
 
 #submit:hover {

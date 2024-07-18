@@ -1,9 +1,13 @@
+body {
+    font-family: sans-serif;
+}
+
 footer {
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
-.footerContainer {
+.footContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -14,7 +18,7 @@ footer {
     gap: 5px;
 }
 
-.icons {
+.iconsLog {
     width: 20px;
     height: 20px;
     background-color: rgba(117, 142, 223, 0.819);

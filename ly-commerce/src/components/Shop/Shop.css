@@ -6,7 +6,7 @@ h2 {
 }
 
 
-#product-container {
+#product-cont {
     background-color: white;
     height: 60%;
     width: 90%;
@@ -17,7 +17,7 @@ h2 {
     justify-content: space-between;
 }
 
-.card {
+#cardImg {
     width: 350px;
     height: 550px;
     padding: 10px;
@@ -52,7 +52,7 @@ p {
     font-weight: bold;
 }
 
-.cart {
+.cartButton {
     background-color: white;
     color: rgba(117, 142, 223, 0.819);
     padding: 15px;
@@ -60,7 +60,7 @@ p {
     min-width: 200px;
 }
 
-.cart:hover {
+.cartButton:hover {
     background-color: rgba(117, 142, 223, 0.819);
     color: white;
 }
@@ -75,3 +75,49 @@ p {
     align-items: center;
     padding-right: 30px;
 }
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }

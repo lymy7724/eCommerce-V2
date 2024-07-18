@@ -1,12 +1,12 @@
 import "./App.css";
+import "./index.css";
 import Header from "./components/Header/Header";
 import Footer from './components/Footer/Footer'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./index.css";
 import Contact from "./components/Contact/Contact";
 import Home from "./components/Home/Home";
 import Shop from "./components/Shop/Shop";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
