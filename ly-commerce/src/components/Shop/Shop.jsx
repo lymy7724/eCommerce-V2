@@ -22,6 +22,14 @@ export default function Shop() {
       const filtered = product.filter(item=>item.category === "Disney");
       setCategory(filtered)
     }
+    else if(word === "Food") {
+      const filtered = product.filter(item=>item.category === "Food");
+      setCategory(filtered)
+    }
+    else if(word === "Superheros") {
+      const filtered = product.filter(item=>item.category === "Superheros");
+      setCategory(filtered)
+    }
   }
 
     useEffect(()=> {
@@ -58,10 +66,11 @@ export default function Shop() {
         <button value="All" onClick={handleBtns}>All</button>
                   <button value="Animals" onClick={handleBtns}>Animals</button>
                   <button value="Disney" onClick={handleBtns}>Disney</button>
+                  <button value="Food" onClick={handleBtns}>Food</button>
+                  <button value="Superheros" onClick={handleBtns}>Superheros</button>
         </div>
       </div>
-
-
+    
       <div id="product-cont">
       
       {category.map((item) => (

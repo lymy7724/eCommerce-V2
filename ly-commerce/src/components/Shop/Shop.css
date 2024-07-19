@@ -11,17 +11,16 @@ h2 {
     height: 60%;
     width: 90%;
     margin: 30px;
-    padding: 40px;
+    padding: 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 #cardImg {
     width: 350px;
     height: 550px;
-    padding: 10px;
-
+    padding: 15px;
 }
 
 .images {
@@ -77,10 +76,10 @@ p {
 }
 
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: rgba(117, 142, 223, 0.819);
     color: white;
     padding: 16px;
-    font-size: 16px;
+    font-size: 18px;
     border: none;
     cursor: pointer;
   }
@@ -119,5 +118,18 @@ p {
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #3e468e;
+  }
+
+  .dropdown-content button {
+    border: none;
+    background-color: #3e468e;
+    width: 100%;
+    color: white;
+    font-size: 15px;
+  }
+
+  .dropdown-content button:hover {
+    background-color:rgba(117, 142, 223, 0.819) ;
+    cursor: pointer;
   }

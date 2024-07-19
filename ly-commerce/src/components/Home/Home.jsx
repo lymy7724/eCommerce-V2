@@ -3,15 +3,8 @@ import './Home.css'
 import {Link, Outlet} from "react-router-dom"
 import ronaldo from '../../images/ronaldo2.webp'
 import messi from '../../images/messi.avif'
-import rapunzel from '../../images/rapunzel.avif'
-import mirabel from '../../images/mirabel.avif'
-import up from '../../images/up.webp'
-import jasmine from '../../images/jasmine.avif'
-import harry from '../../images/harry.avif'
-import hagrid from '../../images/hagrid.avif'
-import voldemort from '../../images/voldemort.avif'
-import dobby from '../../images/dob.avif'
 import axios from 'axios'
+import Carousal from '../Carousal/Carousal'
 
 
 
@@ -51,9 +44,9 @@ export default function Home() {
             <div style={{paddingTop: "30px"}}><Link to="/shop"><button className="main-button">SHOP
                             NOW</button></Link></div>
         </div>
-      <div className="greetings">
+      <div id="greetings">
           <h3>Welcome to Crochetopia</h3>
-          <p>Step into a world of handmade charm and crochet wonders. Each stitch is
+          <p className='introduction'>Step into a world of handmade charm and crochet wonders. Each stitch is
               crafted with
               love and care, just for
               you. Explore our cozy creations and find the perfect piece to add warmth and style to your life. Happy
@@ -94,33 +87,11 @@ export default function Home() {
         <div className="disneycoll">
             <h3
                 style={{fontFamily: 'Trebuchet MS'}}>
-                Shop the Disney
-                Collection</h3>
+                SHOP OUR COLLECTIONS</h3>
         </div>
-        <div className="disneycont">
-            <img src={rapunzel} alt="crochet rapunzel" className="disney"/>
-            <img src={jasmine} alt="crochet jasmine" className="disney"/>
-            <img src={up} alt="crochet carl fredrickson" className="disney"/>
-            <img src={mirabel} alt="crochet mirabel" className="disney"/>
-        </div>
+       <Carousal/>
     </div>
-
-
-    <div className="harry">
-        <div className="disneycoll">
-            <h3
-                style={{fontFamily: "Trebuchet MS"}}>
-                Shop the Harry Potter
-                Collection</h3>
-        </div>
-        <div className="disneycont">
-            <img src={hagrid} alt="crochet hagrid" className="disney"/>
-            <img src={harry} alt="crochet harry potter" className="disney"/>
-            <img src={voldemort} alt="crochet voldemort" className="disney"/>
-            <img src={dobby} alt="crochet dobby the elf" className="disney"/>
-        </div>
-    </div>
-
+    
     <div id="bgContainer">
     <div className="bg-image"></div>
     <div className="bg-text">
