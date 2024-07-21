@@ -2,13 +2,13 @@
 import React from 'react'
 import {Link, Outlet} from "react-router-dom"
 import './Header.css'
-import { Form } from 'react-router-dom'
+
 
 export default function Header() {
   return (
     <>
     <div id='header'>
-        <h3>CROCHETOPIA</h3>
+        <Link to="/" style={{textDecoration: "none"}}><h3>CROCHETOPIA</h3></Link>
         <div className='headerOne'>
             <ul className="headlink">
                 <Link to="/">

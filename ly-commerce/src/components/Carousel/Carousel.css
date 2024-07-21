@@ -1,0 +1,17 @@
+img {
+    width: 325px;
+    height:325px;
+}
+
+.slider-container {
+    width: 90%;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 2%;
+}

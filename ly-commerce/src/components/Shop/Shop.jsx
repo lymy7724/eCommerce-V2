@@ -36,10 +36,6 @@ export default function Shop() {
       products();
     }, [])
 
-    // const test = () => {
-    //   setCategory(product)
-    // }
-
     const products = () => {
       axios
         .get('http://localhost:9000/API/getall')
