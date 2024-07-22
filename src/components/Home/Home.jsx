@@ -27,7 +27,7 @@ export default function Home() {
           setSubmitted(true);
         }
 
-    axios.post('http://localhost:9000/newsletter', {
+    axios.post('http://3.142.237.182:9000/newsletter', {
         signup: email
       })
       .then(function (response) {

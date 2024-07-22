@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 import './Shop.css'
 
 export default function Shop() {
@@ -36,17 +35,11 @@ export default function Shop() {
       products();
     }, [])
 
-    const products = () => {
-      axios
-        .get('http://3.142.237.182:9000/API/getall')
-        .then((res) => {
-          console.log(res);
-          setProduct(res.data);
-          setCategory(res.data)
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    const products = async () => {
+      const list = await fetch('http://3.142.237.182:9000/API/getall')
+      const items = await list.json()
+      setProduct(items)
+      setCategory(items)
       }
 
   return (

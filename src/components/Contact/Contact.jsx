@@ -34,7 +34,7 @@ export default function Contact() {
         setSubmitted(true);
       }
 
-  axios.post('http://localhost:9000/form', {
+  axios.post('http://3.142.237.182:9000/form', {
       name: name,
       email: email,
       message: message
