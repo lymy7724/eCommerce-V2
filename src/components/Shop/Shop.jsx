@@ -38,7 +38,7 @@ export default function Shop() {
 
     const products = () => {
       axios
-        .get('http://localhost:9000/API/getall')
+        .get('http://3.142.237.182:9000/API/getall')
         .then((res) => {
           console.log(res);
           setProduct(res.data);
