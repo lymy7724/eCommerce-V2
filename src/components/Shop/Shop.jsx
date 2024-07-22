@@ -36,7 +36,8 @@ export default function Shop() {
     }, [])
 
     const products = async () => {
-      const list = await fetch('http://3.142.237.182:9000/API/getall')
+      //const list = await fetch('http://localhost:9000/API/getall')
+      const list = await fetch('https://ecommerce-v2-loko.onrender.com/API/getall')
       const items = await list.json()
       setProduct(items)
       setCategory(items)

@@ -27,7 +27,9 @@ export default function Home() {
           setSubmitted(true);
         }
 
-    axios.post('http://3.142.237.182:9000/newsletter', {
+    
+    //axios.post('http://localhost:9000/newsletter', {
+    axios.post('https://ecommerce-v2-loko.onrender.com/newsletter', {
         signup: email
       })
       .then(function (response) {

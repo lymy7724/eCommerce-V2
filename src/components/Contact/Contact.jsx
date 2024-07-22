@@ -33,8 +33,9 @@ export default function Contact() {
       if (message) {
         setSubmitted(true);
       }
-
-  axios.post('http://3.142.237.182:9000/form', {
+      
+  //axios.post('http://localhost:9000/form', {
+  axios.post('https://ecommerce-v2-loko.onrender.com/form', {
       name: name,
       email: email,
       message: message
