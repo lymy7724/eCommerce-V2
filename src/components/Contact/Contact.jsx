@@ -27,11 +27,15 @@ export default function Contact() {
       if (name) {
         setSubmitted(true);
       }
-      if (email) {
+      if (/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
         setSubmitted(true);
+      } else {
+        alert ('Please enter a valid email address')
       }
       if (message) {
         setSubmitted(true);
+      } else {
+        alert ("Please write a message!")
       }
       
   //axios.post('http://localhost:9000/form', {
@@ -53,7 +57,7 @@ export default function Contact() {
   return (
     <>
     <div id="form-cont">
-      <img src={frida} class="frida" alt="crochet frida khalo"/>
+      <img src={frida} className="frida" alt="crochet frida khalo"/>
       <div className="small-form-cont">
           <h5>Leave us a question or comment!</h5>
           <form action="/form" onSubmit={handleSubmit}>
@@ -66,7 +70,7 @@ export default function Contact() {
                   <div>
                       <p>EMAIL *</p>
                       <input id="email" type="email" name="email" value={email}
-            onChange={(e) => setEmail(e.target.value)}/>
+            onChange={(e) => setEmail(e.target.value)} />
                   </div>
               </div>
               <p>MESSAGE *</p>

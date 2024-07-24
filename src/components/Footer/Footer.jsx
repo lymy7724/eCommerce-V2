@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer>
         <div className="footContainer">
-            <div>
+            <div className='socials'>
                 <a href="https://www.instagram.com/"><img src={instagram} alt='instagram logo' className='iconsLog'/></a>
                 <a href="https://www.facebook.com/"><img src={facebook} alt='facebook logo' className='iconsLog'/></a>
                 <a href="https://www.tiktok.com/en/"><img src={tiktok} alt='tiktok logo' className='iconsLog'/></a>
@@ -21,7 +21,7 @@ export default function Footer() {
                 </ul>
             </div>
             <div>
-                <p>Copyright &copy; 2024 Crochetopia </p>
+                <p style={{fontFamily: "sans-serif"}}>Copyright &copy; 2024 Crochetopia </p>
             </div>
         </div>
     

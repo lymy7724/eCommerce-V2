@@ -1,3 +1,121 @@
 body {
     margin: 0;
 }
+
+.marquee {
+    color: rgba(15, 39, 218, 0.854);
+}
+
+/* homepage responsiveness */
+/* mobile phone */
+@media (max-width:600px) {
+    /* home page*/
+    .heroImage {
+        background-size: 100% 100vw;
+        background-position: center;
+        height: 350px;
+    }
+
+    .headlink {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .homelogo {
+        height: 150px;
+        width: 150px;
+        border: none;
+    }
+
+    .popularimg {
+        height: 250px;
+        width: 200px;
+        margin-top: 200px;
+    }
+
+    .fanitem {
+        font-size: 20px;
+    }
+
+    .cart2 {
+        padding-right: 20px;
+    }
+    
+    .socials {
+        display: flex;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    /* contact page */
+    .frida {
+        display: none;
+    }
+
+    #form-cont {
+        padding-top: 10px;
+    }
+
+    .small-form-cont {
+        padding-left: 40px;
+    }
+
+    #name,
+    #email {
+        width: 150px;
+        height: 45px;
+    }
+
+    #message {
+        height: 100px;
+    }
+
+    }
+
+    /* tablets */ 
+    @media (min-width:601px) and (max-width:992px) {
+    /* home page */
+    .heroImage {
+        background-size: 100% 100vw;
+        background-position: center;
+        height: 400px;
+    }
+
+    #greetings {
+        padding-bottom: 20%;
+    }
+
+    .popularimg {
+        height: 350px;
+        width: 300px;
+    }
+
+    .socials {
+        display: flex;
+    }
+
+    /* contact page */
+    .frida {
+        display: none;
+    }
+
+    #form-cont {
+        padding-top: 10px;
+    }
+    }
+
+    /* @media (min-width:993px) and (max-width: 1499px) {
+    .fanitemp {
+        width: 400px;
+        flex-wrap: wrap;
+    }
+    }
+
+    @media (min-width:1500px) {
+    .fanitemp {
+        width: 650px;
+        flex-wrap: wrap;
+    }
+    } */

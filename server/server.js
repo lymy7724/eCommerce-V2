@@ -6,6 +6,7 @@ app.use(cors());
 app.use(express.json());
 const port = 9000;
 
+// establish connection to databse
 const connection = mysql.createConnection({
   host: "sql5.freesqldatabase.com",
   user: "sql5719789",
@@ -13,6 +14,7 @@ const connection = mysql.createConnection({
   database: "sql5719789",
 });
 
+// display all products in my table
 app.all("/API/getall", (req, res) => {
   connection.query(
     "SELECT * FROM products_table",
@@ -25,6 +27,7 @@ app.all("/API/getall", (req, res) => {
 });
 
 //post routes
+// connect to newsletter table - store user's information
 app.post("/newsletter", (req, res) => {
   const email = req.body.signup;
   console.log(req.body.signup);
@@ -42,6 +45,7 @@ app.post("/newsletter", (req, res) => {
   res.redirect(x);
 });
 
+// store user's data in contact table
 app.post("/form", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;

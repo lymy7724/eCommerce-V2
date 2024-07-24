@@ -4,11 +4,12 @@ import {Link, Outlet} from "react-router-dom"
 import './Header.css'
 
 
+
 export default function Header() {
   return (
     <>
     <div id='header'>
-        <Link to="/" style={{textDecoration: "none"}}><h3>CROCHETOPIA</h3></Link>
+        <Link to="/" style={{textDecoration: "none"}}><h3 id='crochetname'>CROCHETOPIA</h3></Link>
         <div className='headerOne'>
             <ul className="headlink">
                 <Link to="/">

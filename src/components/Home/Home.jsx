@@ -8,7 +8,6 @@ import Carousel from '../Carousel/Carousel'
 
 
 
-
 export default function Home() {
     
     const [email, setEmail] = useState("");
@@ -23,11 +22,13 @@ export default function Home() {
       // handle form submission
       const handleSubmit = (e) => {
         e.preventDefault();
-        if (email) {
+        
+        if (/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
           setSubmitted(true);
+        } else {
+          alert ('Please enter a valid email address')
         }
 
-    
     //axios.post('http://localhost:9000/newsletter', {
     axios.post('https://ecommerce-v2-loko.onrender.com/newsletter', {
         signup: email
