@@ -1,21 +1,17 @@
-body {
-    font-family: sans-serif;
-}
+
 
 footer {
     padding-top: 50px;
     padding-bottom: 20px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 .footContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-}
-
-.footerlogo {
-    gap: 5px;
 }
 
 .iconsLog {
@@ -31,11 +27,23 @@ footer {
     margin: 0px;
     display: flex;
     align-items: center;
-    gap: 80px;
-    justify-content: center;
+    justify-content: space-evenly;
     padding-bottom: 10px;
+}
+
+.ftlink li:hover {
+    color:rgba(117, 142, 223, 0.819) ;
 }
 
 p {
     padding-bottom: 10px;
+}
+
+.ftlink li{
+    padding: 10px;
+}
+
+.socials{
+    display: flex;
+    gap: 3px;
 }

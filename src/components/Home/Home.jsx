@@ -57,16 +57,20 @@ export default function Home() {
           </p>
       </div>
 
+    <div className='pop-container'>
+
       <div className="popular">
-        <div style={{display:"flex", flexDirection:"row", justifyContent:"space-between"}}>
+        <div className='fanbox'>
           <h5 className="fanitem" style={{fontSize:"50px"}}>OUR FAN FAVORITES</h5>
-          <div style={{paddingRight:"190px"}}><Link to="/shop"><button className="cart-main">SHOP NOW</button></Link></div>
+          <div><Link to="/shop"><button className="cart-main">SHOP NOW</button></Link></div>
         </div>
         <div className="showcase">
             <div className='showcase-img'>
-              <img src={ronaldo} alt="crochet ronaldo" class="popularimg"/></div>
+              <img src={ronaldo} alt="crochet ronaldo" className="popularimg"/></div>
             <div className='showcase-img'><img src={messi} alt="crochet messi" className="popularimg"/></div>
         </div>
+      </div>
+
       </div>
 
      
@@ -80,13 +84,12 @@ export default function Home() {
     <p>Subscribe to our newsletter!</p>
     <form onSubmit={handleSubmit} id="newsletter-form">
         <input value={email}
-            onChange={(e) => setEmail(e.target.value)} name="signup" type="text" placeholder="YOUR EMAIL ADDRESS" id="news"/>
+            onChange={(e) => setEmail(e.target.value)} name="signup" type="text" placeholder="EMAIL ADDRESS" id="news"/>
         <input type="submit" value="SUBSCRIBE" id="submit"/>
     </form>
     {submitted && <p>Thanks for subscribing!</p>}
     </div>
     </div>
-    <Outlet />
     </div>
   )
 }

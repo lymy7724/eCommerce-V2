@@ -4,18 +4,18 @@
     flex-direction: row; 
     width: 100%; 
     justify-content: right;
-  }
+}
   
-  #header {
+#header {
     background-color: white;
     width: 100vw;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 20px;
-  }
+}
   
-  .headlink {
+.headlink {
     list-style: none;
     font-size: 20px;
     font-family: sans-serif;
@@ -26,26 +26,61 @@
     justify-content: center;
     padding-bottom: 10px;
     padding-top: 10px;
-  }
+}
   
-  ul a {
+ul a {
     text-decoration: none;
     color: black;
-  }
-  
-  ul li:hover {
+}
+
+ul li:hover {
     color: rgb(68, 129, 228);
-  }
+}
 
-  .cart-container {
+.cart-container {
     padding-right: 30px;
-  }
+}
 
-  h3 {
+#crochetname {
     font-weight: bold;
     color: black;
     font-family: sans-serif;
     padding-left: 30px;
     font-size: 25px;
     gap: 10px;
+}
+
+.burger {
+    display: none;
+}
+
+.burger-links {
+  list-style: none;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.burger-links li {
+  padding-top: 20px;
+}
+
+@media (max-width: 900px) {
+
+  #header{
+    justify-content: space-between;
   }
+
+  #crochetname{
+    text-align: center;
+    font-size: 22px;
+    padding-left: 0;
+  }
+
+  .headerOne {
+    display: none;
+  } 
+
+  .burger {
+    display: flex;
+  }
+}

@@ -90,6 +90,44 @@ form {
     padding-top: 40px;
 }
 
+/* mobile phone */
+@media (max-width:600px) {
+
+    /* contact page */
+    .frida {
+        display: none;
+    }
+
+    #form-cont {
+        padding-top: 10px;
+    }
+
+    .small-form-cont {
+        padding-left: 40px;
+    }
+
+    #name,
+    #email {
+        width: 150px;
+        height: 45px;
+    }
+
+    #message {
+        height: 100px;
+    }
+
+    #freq-asked h1{
+        text-align: center;
+    }
+
+    }
+
+@media (min-width:601px) and (max-width:992px) {
+    .frida {
+        display: none;
+    }
+}
+
 /* .invalid {
     border: 3px solid rgb(235, 8, 8);
   }
