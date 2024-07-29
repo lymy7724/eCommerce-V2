@@ -16,6 +16,21 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   
+
+  const send = () => {
+    axios.post('https://ecommerce-v2-loko.onrender.com/form', {
+      name: name,
+      email: email,
+      message: message
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  }
     // handle form submission
   const handleSubmit = (e) => {
       e.preventDefault();
@@ -23,6 +38,7 @@ export default function Contact() {
         if (/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
           if (message) {
             setSubmitted(true);
+            send();
           } else {
             alert ("Please write a message!")
           }
@@ -33,20 +49,7 @@ export default function Contact() {
       else{
         alert('Please enter your name')
       }
-      if (submitted){
-        //axios.post('http://localhost:9000/form', {
-        axios.post('https://ecommerce-v2-loko.onrender.com/form', {
-          name: name,
-          email: email,
-          message: message
-        })
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-      }         
+       
 
   }
 
