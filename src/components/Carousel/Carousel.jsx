@@ -10,6 +10,7 @@ import mirabel from '../../images/mirabel.avif'
 import up from '../../images/up.webp'
 import jasmine from '../../images/jasmine.avif'
 import Carousel from "react-multi-carousel";
+import {Link} from "react-router-dom"
 
 export default function Carouselslider() {
   const responsive = {
@@ -19,12 +20,12 @@ export default function Carouselslider() {
       slidesToSlide: 2 // optional, default to 1.
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 600 },
       items: 2,
       slidesToSlide: 2 // optional, default to 1.
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 600, min: 0 },
       items: 1,
       slidesToSlide: 1 // optional, default to 1.
     }
@@ -35,7 +36,7 @@ export default function Carouselslider() {
       <div className='slider-container'>
         <h3
         style={{fontFamily: 'Trebuchet MS', paddingLeft: "0"}}>YOU MAY ALSO LIKE</h3>
-        <Carousel swipeable={false}
+        <Carousel
         draggable={false}
         responsive={responsive}
         ssr={true} // means to render carousel on server-side.
@@ -47,14 +48,38 @@ export default function Carouselslider() {
         containerClass="carousel-container"
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px">
-          <img src={rapunzel} alt="crochet rapunzel" />
-          <img src={jasmine} alt="crochet jasmine" />
-          <img src={up} alt="crochet carl fredrickson" />
-          <img src={mirabel} alt="crochet mirabel" />
-          <img src={hagrid} alt="crochet hagrid" />
-          <img src={harry} alt="crochet harry potter" />
-          <img src={voldemort} alt="crochet voldemort" />
-          <img src={dobby} alt="crochet dobby the elf" />
+          <div className='slider-box'>
+            <img src={rapunzel} alt="crochet rapunzel" className='sliderimg'/>
+            <Link to="/shop" className='hoverbutton'>Buy Now</Link>
+          </div>
+          <div className='slider-box'>
+          <img src={jasmine} alt="crochet jasmine" className='sliderimg'/>
+          <Link to="/shop" className='hoverbutton'>Buy Now</Link>
+          </div>
+          <div className='slider-box'>
+          <img src={up} alt="crochet carl fredrickson" className='sliderimg'/>
+          <Link to="/shop" className='hoverbutton'>Buy Now</Link>
+          </div>
+          <div className='slider-box'>
+          <img src={mirabel} alt="crochet mirabel" className='sliderimg'/>
+          <Link to="/shop" className='hoverbutton'>Buy Now</Link>
+          </div>
+          <div className='slider-box'>
+          <img src={hagrid} alt="crochet hagrid" className='sliderimg'/>
+          <Link to="/shop" className='hoverbutton'>Buy Now</Link>
+          </div>
+          <div className='slider-box'>
+          <img src={harry} alt="crochet harry potter" className='sliderimg'/>
+          <Link to="/shop" className='hoverbutton'>Buy Now</Link>
+          </div>
+          <div className='slider-box'>
+          <img src={voldemort} alt="crochet voldemort" className='sliderimg'/>
+          <Link to="/shop" className='hoverbutton'>Buy Now</Link>
+          </div>
+          <div className='slider-box'>
+          <img src={dobby} alt="crochet dobby the elf" className='sliderimg' />
+          <Link to="/shop" className='hoverbutton'>Buy Now</Link>
+          </div>
         </Carousel>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Home.css'
-import {Link, Outlet} from "react-router-dom"
+import {Link} from "react-router-dom"
 import ronaldo from '../../images/ronaldo2.webp'
 import messi from '../../images/messi.avif'
 import axios from 'axios'
@@ -12,7 +12,8 @@ export default function Home() {
     
     const [email, setEmail] = useState("");
     const [submitted, setSubmitted] = useState(false);
-
+    
+  // useEffect runs when email or submitted has been changed
     useEffect(() => {
         if (submitted) {
           console.log("form submitted:", email);
@@ -22,7 +23,7 @@ export default function Home() {
       // handle form submission
       const handleSubmit = (e) => {
         e.preventDefault();
-        
+        // regex test for email 
         if (/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
           setSubmitted(true);
         } else {
@@ -66,8 +67,13 @@ export default function Home() {
         </div>
         <div className="showcase">
             <div className='showcase-img'>
-              <img src={ronaldo} alt="crochet ronaldo" className="popularimg"/></div>
-            <div className='showcase-img'><img src={messi} alt="crochet messi" className="popularimg"/></div>
+              <img src={ronaldo} alt="crochet ronaldo" className="popularimg"/>
+              <Link to="/shop" className='hoverbutton'>Buy Now</Link>
+            </div>
+            <div className='showcase-img'>
+              <img src={messi} alt="crochet messi" className="popularimg"/>
+              <Link to="/shop" className='hoverbutton'>Buy Now</Link>
+            </div>
         </div>
       </div>
 

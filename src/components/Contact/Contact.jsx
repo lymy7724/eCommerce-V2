@@ -10,11 +10,14 @@ import axios from 'axios'
 
 export default function Contact() {
 
+  // create state variables
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+
+  // useEffect runs when a name, email, message, or submitted has been changed
   useEffect(() => {
       if (submitted) {
         console.log("form submitted:", name, email, message);

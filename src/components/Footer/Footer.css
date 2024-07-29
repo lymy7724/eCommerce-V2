@@ -41,9 +41,25 @@ p {
 
 .ftlink li{
     padding: 10px;
+    font-family: sans-serif;
 }
 
 .socials{
     display: flex;
     gap: 3px;
+}
+
+@media (max-width:992px) {
+    footer {
+        padding-top: 30px;
+        padding-bottom: 0;
+    }
+
+    .footContainer {
+        flex-direction: column;
+    }
+
+    .ftlink {
+        flex-direction: column;
+    }
 }

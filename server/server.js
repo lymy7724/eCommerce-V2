@@ -14,6 +14,14 @@ const connection = mysql.createConnection({
   database: "sql5719789",
 });
 
+app.all("/getCart", (req, res) => {
+  connection.query("SELECT * FROM cart", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+    res.json(result);
+  });
+});
+
 // display all products in my table
 app.all("/API/getall", (req, res) => {
   connection.query(
@@ -59,6 +67,26 @@ app.post("/form", (req, res) => {
       console.log("success");
     }
   });
+});
+
+app.post("/addtoCart", (req, res) => {
+  const name = req.body.item_name;
+  const price = req.body.item_price;
+  const image = req.body.item_image;
+
+  console.log(req.body.item_name);
+
+  const sql = `INSERT INTO cart(name, price, image) VALUES(?, ?, ?)`;
+  connection.query(sql, [name, price, image], function (err, data) {
+    if (err) {
+      console.log("err");
+    } else {
+      console.log("success");
+    }
+  });
+
+  const x = req.headers.referer;
+  res.redirect(x);
 });
 
 app.listen(port, () => {

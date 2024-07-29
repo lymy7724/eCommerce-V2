@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import { useState, useEffect } from 'react'
 import './Shop.css'
 
@@ -7,8 +8,22 @@ export default function Shop() {
     const [category, setCategory] = useState(product);
     const [priceList, setPriceList] = useState(product);
 
+    const addtoCart=(name, price, image) =>{
+      axios.post('https://ecommerce-v2-loko.onrender.com/addtoCart', {
+        item_name: name,
+        item_price: price,
+        item_image: image
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }
 
-    const handleBtns = (e) => {
+
+  const handleBtns = (e) => {
     let word=e.target.value;
 
       // filter products by matching category
@@ -42,7 +57,7 @@ export default function Shop() {
     setPriceList([...reverseSortedProducts])
   }
   
-
+  // runs products function when the page loads
     useEffect(()=> {
       products();
     }, [])
@@ -54,7 +69,7 @@ export default function Shop() {
       const items = await list.json()
       setProduct(items)
       setCategory(items)
-      }
+    }
 
   return (
     <>
@@ -82,6 +97,7 @@ export default function Shop() {
       </div>
     </div>
     
+    
       <div id="product-cont">
       
       {category.map((item) => (
@@ -91,7 +107,7 @@ export default function Shop() {
           <p className='name'>{item.product_name}</p>
           <p>{item.description}</p>
           <p className='price'>${item.price}</p>
-          <div className="cart2"><button className="cartButton">ADD TO CART</button></div>
+          <div className="cart2"><button className="cartButton" onClick={()=>addtoCart(item.product_name, item.price, item.image)}>ADD TO CART</button></div>
           </div>
           
         ))}
