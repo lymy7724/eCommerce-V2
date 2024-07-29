@@ -4,7 +4,6 @@ import {Link, Outlet} from "react-router-dom"
 import './Header.css'
 import Hamburger from 'hamburger-react'
 import { useState, useEffect } from "react"
-import { Slide } from "react-awesome-reveal";
 
 
 export default function Header() {
@@ -20,8 +19,8 @@ export default function Header() {
   
       // fetches product info from hosted server 
       const cartItems = async () => {
-        const list = await fetch('http://localhost:9000/getCart')
-        //const list = await fetch('https://ecommerce-v2-loko.onrender.com/getCart')
+        // const list = await fetch('http://localhost:9000/getCart')
+        const list = await fetch('https://ecommerce-v2-loko.onrender.com/getCart')
         const items = await list.json()
         setCart(items)
       }

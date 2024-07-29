@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './Contact.css'
 import frida from '../../images/frida.avif'
 import Accordion from '../Accordion/Accordian.jsx'
@@ -10,49 +10,44 @@ import axios from 'axios'
 
 export default function Contact() {
 
-  // create state variables
+  // create state variables for each field
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
-
-
-  // useEffect runs when a name, email, message, or submitted has been changed
-  useEffect(() => {
-      if (submitted) {
-        console.log("form submitted:", name, email, message);
-      }
-    }, [ name, email, message, submitted]);
   
     // handle form submission
-    const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
       e.preventDefault();
       if (name) {
-        setSubmitted(true);
+        if (/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
+          if (message) {
+            setSubmitted(true);
+          } else {
+            alert ("Please write a message!")
+          }
+        } else {
+          alert ('Please enter a valid email address')
+        }
+      } 
+      else{
+        alert('Please enter your name')
       }
-      if (/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
-        setSubmitted(true);
-      } else {
-        alert ('Please enter a valid email address')
-      }
-      if (message) {
-        setSubmitted(true);
-      } else {
-        alert ("Please write a message!")
-      }
-      
-  //axios.post('http://localhost:9000/form', {
-  axios.post('https://ecommerce-v2-loko.onrender.com/form', {
-      name: name,
-      email: email,
-      message: message
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      if (submitted){
+        //axios.post('http://localhost:9000/form', {
+        axios.post('https://ecommerce-v2-loko.onrender.com/form', {
+          name: name,
+          email: email,
+          message: message
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }         
+
   }
 
 
