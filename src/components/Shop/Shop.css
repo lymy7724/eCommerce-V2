@@ -65,6 +65,7 @@ p {
 .cartButton:hover {
     background-color: rgba(117, 142, 223, 0.819);
     color: white;
+    cursor: pointer;
 }
 
 .cart2 {

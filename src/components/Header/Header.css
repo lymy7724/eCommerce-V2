@@ -73,7 +73,7 @@ ul li:hover {
 .cartSlider{
   height: 90vh;
   width: 300px;
-  background-color: rgb(117, 142, 223);
+  background-color: rgb(255, 255, 255);
   transition: all 0.3s ease-in-out;
   z-index: 999;
   position:absolute;
@@ -83,15 +83,16 @@ ul li:hover {
   justify-content: space-between;
   align-items: center;
   box-shadow: -5px 5px 8px rgba(32, 32, 32, 0.73);
-
 }
 
 .cartContainer{
-  height: auto;
+  height: 80vh;
   width: 90%;
   overflow-x: scroll;
   background-color: white ;
   padding: 5px;
+  border: 1px solid black;
+  margin-bottom: 20px;
 }
 
 .cartimage{
@@ -107,6 +108,22 @@ ul li:hover {
   height: auto;
   font-size: 15px;
   border-bottom: 1px solid black;
+}
+
+.checkoutButton {
+  border: none;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  background-color:rgba(13, 13, 13, 0.677) ;
+  color: rgb(238, 234, 234);
+  box-shadow: 2px 2px 3px rgba(32, 32, 32, 0.73);
+}
+
+.checkoutButton:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }
 
 @media (max-width: 900px) {

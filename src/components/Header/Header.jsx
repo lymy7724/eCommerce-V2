@@ -85,7 +85,7 @@ export default function Header() {
 }
 {isOpen2?
         <div className='cartSlider'>
-            <h3>Cart</h3>
+            <h3> Shopping Cart</h3>
         <div className='cartContainer'>
             {cart.map((item) => (
             
@@ -97,7 +97,7 @@ export default function Header() {
             
             ))}
         </div>
-            <button>checkout</button>
+            <button className='checkoutButton'>Checkout</button>
         </div>
         : null
 }
