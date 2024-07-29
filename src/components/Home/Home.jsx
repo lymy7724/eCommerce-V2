@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './Home.css'
 import {Link} from "react-router-dom"
 import ronaldo from '../../images/ronaldo2.webp'
@@ -13,33 +13,25 @@ export default function Home() {
     const [email, setEmail] = useState("");
     const [submitted, setSubmitted] = useState(false);
     
-  // useEffect runs when email or submitted has been changed
-    useEffect(() => {
-        if (submitted) {
-          console.log("form submitted:", email);
-        }
-      }, [ email, submitted]);
-    
       // handle form submission
       const handleSubmit = (e) => {
         e.preventDefault();
         // regex test for email 
         if (/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
           setSubmitted(true);
+          //axios.post('http://localhost:9000/newsletter', {
+          axios.post('https://ecommerce-v2-loko.onrender.com/newsletter', { // sends request to newsletter endpoint
+            signup: email
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
         } else {
           alert ('Please enter a valid email address')
         }
-
-    //axios.post('http://localhost:9000/newsletter', {
-    axios.post('https://ecommerce-v2-loko.onrender.com/newsletter', {
-        signup: email
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
     }
 
   return (
@@ -84,18 +76,18 @@ export default function Home() {
    
     
     <div id="bgContainer">
-    <div className="bg-image"></div>
-    <div className="bg-text">
-    <h1>Want to be the first to hear about new releases?</h1>
-    <p>Subscribe to our newsletter!</p>
-    <form onSubmit={handleSubmit} id="newsletter-form">
-        <input value={email}
-            onChange={(e) => setEmail(e.target.value)} name="signup" type="text" placeholder="EMAIL ADDRESS" id="news"/>
-        <input type="submit" value="SUBSCRIBE" id="submit"/>
-    </form>
-    {submitted && <p>Thanks for subscribing!</p>}
-    </div>
-    </div>
+      <div className="bg-image"></div>
+        <div className="bg-text">
+        <h1>Want to be the first to hear about new releases?</h1>
+        <p>Subscribe to our newsletter!</p>
+        <form onSubmit={handleSubmit} id="newsletter-form">
+            <input value={email}
+                onChange={(e) => setEmail(e.target.value)} name="signup" type="text" placeholder="EMAIL ADDRESS" id="news"/>
+            <input type="submit" value="SUBSCRIBE" id="submit"/>
+        </form>
+        {submitted && <p>Thanks for subscribing!</p>}
+        </div>
+      </div>
     </div>
   )
 }

@@ -8,22 +8,22 @@ import { useState, useEffect } from "react"
 
 export default function Header() {
     // creating state variables
-    const [isOpen, setOpen] = useState(false)
-    const [isOpen2, setOpen2] = useState(false)
-    const [cart, setCart] = useState()
+    const [isOpen, setOpen] = useState(false) // hamburger 
+    const [isOpen2, setOpen2] = useState(false) // cart slider
+    const [cart, setCart] = useState() // holds all items in the cart
 
-
+    // runs the function when cart slider is clicked
     useEffect(()=> {
         cartItems();
       },[isOpen2])
   
-      // fetches product info from hosted server 
-      const cartItems = async () => {
+      // fetches product info from the cart table database 
+    const cartItems = async () => {
         // const list = await fetch('http://localhost:9000/getCart')
         const list = await fetch('https://ecommerce-v2-loko.onrender.com/getCart')
         const items = await list.json()
         setCart(items)
-      }
+    }
 
 
   return (
@@ -82,9 +82,9 @@ export default function Header() {
         </div>
         : null // do nothing if its false
 }
-{isOpen2?
+{isOpen2? // if true, it will iterate through cart and display items
         <div className='cartSlider'>
-            <h3> Shopping Cart</h3>
+            <h3>Shopping Cart</h3>
         <div className='cartContainer'>
             {cart.map((item) => (
             
@@ -98,7 +98,7 @@ export default function Header() {
         </div>
             <button className='checkoutButton'>Checkout</button>
         </div>
-        : null
+        : null // do nothing if its false
 }
     </div>
     <Outlet />

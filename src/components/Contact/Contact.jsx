@@ -16,7 +16,7 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   
-
+  // function that sends a request to the form endpoint 
   const send = () => {
     axios.post('https://ecommerce-v2-loko.onrender.com/form', {
       name: name,
@@ -38,7 +38,7 @@ export default function Contact() {
         if (/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
           if (message) {
             setSubmitted(true);
-            send();
+            send(); // if form passes all requirements, send into form database
           } else {
             alert ("Please write a message!")
           }
@@ -49,12 +49,8 @@ export default function Contact() {
       else{
         alert('Please enter your name')
       }
-       
-
   }
 
-
-  
   return (
     <>
     <div id="form-cont">

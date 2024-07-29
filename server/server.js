@@ -14,6 +14,7 @@ const connection = mysql.createConnection({
   database: "sql5719789",
 });
 
+// display all items in the cart table
 app.all("/getCart", (req, res) => {
   connection.query("SELECT * FROM cart", function (err, result, fields) {
     if (err) throw err;
@@ -38,7 +39,6 @@ app.all("/API/getall", (req, res) => {
 // connect to newsletter table - store user's information
 app.post("/newsletter", (req, res) => {
   const email = req.body.signup;
-  console.log(req.body.signup);
 
   const sql = `INSERT INTO newsletter_info(email) VALUES(?)`;
   connection.query(sql, [email], function (err, data) {
@@ -69,12 +69,11 @@ app.post("/form", (req, res) => {
   });
 });
 
+// add items into cart table
 app.post("/addtoCart", (req, res) => {
   const name = req.body.item_name;
   const price = req.body.item_price;
   const image = req.body.item_image;
-
-  console.log(req.body.item_name);
 
   const sql = `INSERT INTO cart(name, price, image) VALUES(?, ?, ?)`;
   connection.query(sql, [name, price, image], function (err, data) {
